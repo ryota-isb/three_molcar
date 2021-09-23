@@ -2,3 +2,50 @@ body {
     margin:0;
     overflow: hidden;
 }
+
+
+
+.wrap {
+    overflow: scroll;
+    position: absolute;
+    width: 30em;
+    height: 60em;
+    bottom: 0;
+    left: 50%;
+    margin-left: -15em;
+    font-size: 150%;
+    text-align: justify;
+    perspective-origin: 50% 100%;
+    transform: perspective(300px) rotateX(25deg);
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .inner {
+        padding-top: 135vh;
+        padding-bottom: 200%;
+
+        p {
+        color:#FFDE06;
+        font-family: 'Noto Sans JP', sans-serif;
+        }       
+    }
+}
+
+.feed {
+    position: fixed;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 20vh;
+//    background-color: #000;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 30%, transparent 100%);
+}
+
+.myCanvas {
+    position: fixed;
+    overflow: hidden;
+}
