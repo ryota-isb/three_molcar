@@ -102,4 +102,22 @@ function init() {
 
         requestAnimationFrame(tick);
     }
+
+    // 初期化のために実行
+    onResize();
+    // リサイズイベント発生時に実行
+    window.addEventListener('resize', onResize);
+
+    function onResize() {
+        // サイズを取得
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        // レンダラーのサイズを調整する
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(width, height);
+
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+    }
 }
